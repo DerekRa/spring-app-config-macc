@@ -1,6 +1,19 @@
 eureka:
   instance:
-    prefer-ip-address: true
+    # prefer-ip-address: true
+    # 1. Disable the HTTP port in the registry
+    non-secure-port-enabled: false
+    secure-port-enabled: true
+    secure-port: ${server.port}
+    
+    # 2. Force the registration to use the domain name, not the IP
+    hostname: docmaccdentalclinic.local
+    prefer-ip-address: false
+
+    # 3. Explicitly set absolute HTTPS URLs (Crucial for the dashboard and Gateway)
+    status-page-url: https://${eureka.instance.hostname}:${server.port}/actuator/info
+    health-check-url: https://${eureka.instance.hostname}:${server.port}/actuator/health
+    home-page-url: https://${eureka.instance.hostname}:${server.port}/
   client:
     fetch-registry: true
     register-with-eureka: true
