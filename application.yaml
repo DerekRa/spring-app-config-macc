@@ -19,7 +19,14 @@ eureka:
     register-with-eureka: true
     service-url:
       defaultZone: ${EUREKA_SERVER_ADDRESS:https://docmaccdentalclinic.local:8761/eureka}
-
+    tls:
+      enabled: true
+      trust-store: "file:C:/Users/Admin/Projects/DentalWebProject/Documents/DentalWebsite/Deployment/Application/docker-compose-desktop-dev/tls/server/truststore.p12"
+      trust-store-password: "admindoc12345"
+      trust-store-type: PKCS12
+      key-store: "file:C:/Users/Admin/Projects/DentalWebProject/Documents/DentalWebsite/Deployment/Application/docker-compose-desktop-dev/tls/server/truststore.p12"
+      key-store-password: "admindoc12345"
+      key-store-type: PKCS12
 spring:
   zipkin:
     baseUrl: http://zipkin-svc:9411 # docker desktop
