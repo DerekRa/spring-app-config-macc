@@ -18,7 +18,7 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      defaultZone: ${EUREKA_SERVER_ADDRESS:https://kennethmacaraeg317.com:8761/eureka}
+      defaultZone: ${EUREKA_SERVER_ADDRESS:http://kennethmacaraeg317.com:8761/eureka}
     # tls:
     #   enabled: true
     #   trust-store: "file:C:/Users/Admin/Projects/DentalWebProject/Documents/DentalWebsite/Deployment/Application/docker-compose-desktop-dev/tls/server/truststore.p12"
